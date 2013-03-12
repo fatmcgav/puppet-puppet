@@ -9,6 +9,7 @@ class puppet::params {
   $group               = 'puppet'
   $dir                 = '/etc/puppet'
   $vardir              = '/var/lib/puppet'
+  $rackdir             = '/usr/share/puppet/rack'
   $ca                  = true
   $passenger           = true
   $port                = 8140
@@ -46,7 +47,7 @@ class puppet::params {
   $post_hook_name      = 'post-receive'
 
   # Passenger config
-  $app_root            = "${dir}/rack"
+  $app_root            = "${rackdir}/puppetmasterd"
   $ssl_dir             = "${vardir}/ssl"
 
   $master_package     =  $::operatingsystem ? {
